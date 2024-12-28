@@ -1,14 +1,21 @@
-import { Routes, Route } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home";
 import Todo from "./pages/Todo";
+import MainLayout from "./components/common/MainLayout";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainLayout />,
+    children: [
+      { path: "", element: <Home /> },
+      { path: "todo", element: <Todo /> },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/todo" element={<Todo />} />
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
