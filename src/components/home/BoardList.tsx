@@ -6,9 +6,11 @@ interface IBoardListProps {
 
 function BoardList({ todos }: IBoardListProps) {
   return (
-    <ul className="mb-3 flex w-full flex-col justify-between">
+    <ul className="flex w-full flex-col justify-between">
       {todos.map((todo) => (
-        <li key={todo.id}>{todo.content}</li>
+        <li className={`mb-1 ${todo.isDone ? 'text-gray-200' : ''}`} key={todo.id}>
+          {todo.content}
+        </li>
       ))}
     </ul>
   );
