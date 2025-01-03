@@ -1,5 +1,5 @@
 function TodoDeleteButton() {
-  return <button className='text-red'>x</button>;
+  return <button className="text-red">❌</button>;
 }
 
 export default TodoDeleteButton;
