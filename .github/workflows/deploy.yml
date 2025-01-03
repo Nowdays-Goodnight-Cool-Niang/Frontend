@@ -32,9 +32,8 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "dist/*"
           target: "/tmp/build"
-          strip_components: 2
+          strip_components: 1
 
-      # 6. 백업 및 기존파일 삭제, 복사
       - name: Configure Instance
         uses: appleboy/ssh-action@master
         with:
