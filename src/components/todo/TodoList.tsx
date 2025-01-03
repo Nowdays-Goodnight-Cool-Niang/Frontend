@@ -4,9 +4,9 @@ import TodoItem from './TodoItem';
 function TodoList() {
   const todos = useTodoStore((state) => state.todos);
   return (
-    <div className='mt-12'>
+    <div className="mt-12">
       {todos.map((todo) => (
-        <TodoItem {...todo} key={todo.id} />
+        <TodoItem {...todo} key={todo.id} initialValue="빼빼로 먹기" initialCheck={false} />
       ))}
     </div>
   );
