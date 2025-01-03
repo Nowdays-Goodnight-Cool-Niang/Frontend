@@ -20,8 +20,8 @@ function Button({
       className={`${
         colorType === ButtonColorType.black && "bg-black text-white"
       } ${
-        colorType === ButtonColorType.gray && "bg-gray-200 text-gray-600"
-      } py-3 rounded-lg w-full`}
+        colorType === ButtonColorType.gray && "bg-gray-50 text-gray-600"
+      } py-4 rounded-lg w-full`}
     >
       {text}
     </button>
