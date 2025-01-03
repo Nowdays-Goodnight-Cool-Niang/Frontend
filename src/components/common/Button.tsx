@@ -1,13 +1,15 @@
-import { ButtonColorType } from "../../utils/constants";
+import { ButtonColorType } from '../../utils/constants';
 
 interface ButtonProps {
+  type?: 'button' | 'submit' | 'reset';
   text: string;
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   colorType?: ButtonColorType;
 }
 
 function Button({
+  type = 'button',
   text,
   onClick,
   disabled = false,
@@ -15,13 +17,12 @@ function Button({
 }: ButtonProps) {
   return (
     <button
-      onClick={onClick}
+      type={type}
+      {...(onClick && { onClick })}
       disabled={disabled}
-      className={`${
-        colorType === ButtonColorType.black && "bg-black text-white"
-      } ${
-        colorType === ButtonColorType.gray && "bg-gray-50 text-gray-600"
-      } py-4 rounded-lg w-full`}
+      className={`${colorType === ButtonColorType.black && 'bg-black text-white'} ${
+        colorType === ButtonColorType.gray && 'bg-gray-50 text-gray-600'
+      } w-full rounded-lg py-4`}
     >
       {text}
     </button>
