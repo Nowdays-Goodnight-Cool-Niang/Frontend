@@ -120,12 +120,22 @@
   blockquote:after,
   q:before,
   q:after {
-    content: "";
+    content: '';
     content: none;
   }
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+
+  @font-face {
+    font-family: 'SUIT Variable';
+    font-weight: 100 900;
+    src: url('/fonts/SUIT-Variable.woff2') format('woff2-variations');
+  }
+
+  body {
+    font-family: 'SUIT Variable', serif;
   }
 
   * {
