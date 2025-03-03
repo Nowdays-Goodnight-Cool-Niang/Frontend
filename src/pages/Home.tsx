@@ -1,4 +1,6 @@
-import ButtonPrimary from '../components/common/ButtonPrimary';
+import BaseButton from '../components/common/BaseButton';
+import Wrapper from '../components/common/Wrapper';
+import KakaoSvg from "../assets/icons/ic_kakao.svg?react"
 
 function Home() {
   const handleKakaoLogin = () => {
@@ -8,18 +10,22 @@ function Home() {
   };
 
   return (
-    <div className='flex justify-center items-center bg-blue-500 w-screen h-screen'>
-     <div className='flex flex-col justify-center items-center'>
-    <div className='w-80 h-80'>
-    <img className='w-full' src='./phone.png'/>
-    </div>
-      <h1 className='text-6xl font-extrabold mb-4'><span className='text-white'>Share</span><span className='text-green-light'>Me</span></h1>
-      <p className='text-white text-base font-semibold'>네트워킹을 더욱 간편하게</p>
-     </div>
-      <div className='fixed bottom-8 left-4 right-4 max-w-full'>
-        <ButtonPrimary variant='kakao' onClick={handleKakaoLogin}>
-          카카오 로그인
-        </ButtonPrimary>
+    <div className='relative background'>
+      <div className='w-full h-screen overflow-hidden'>
+        <img src='src/assets/images/img_geometric_graphic.png' className='w-full absolute bottom-[15%]'/>
+      </div>
+      <div className='absolute w-full h-screen bottom-0'>
+        <Wrapper>
+          <div className='flex flex-col justify-between items-center h-full py-11 gap-[40%]'>
+            <div className='opacity-0 translate-y-5 animate-fade-in h-full flex flex-col justify-center items-center gap-4'>
+              <h1 className='text-5xl text-gray-50 font-museo'>SharE:v</h1>
+              <p className='text-title-1 text-center text-gray-50'>프로필을 등록하고<br/>간편하게 네트워킹하세요</p>
+            </div>
+            <BaseButton variant='kakao' onClick={handleKakaoLogin}>
+              <span className='flex items-center gap-2 justify-center'><KakaoSvg/>카카오 로그인</span>
+            </BaseButton>
+          </div>
+        </Wrapper>
       </div>
     </div>
   );
